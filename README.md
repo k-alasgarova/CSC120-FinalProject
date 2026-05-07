@@ -34,15 +34,22 @@ The Plane
 - Player.java - the player
 - Plane.java - the world (with all the locations)
 - Location.java - abstract base class for all locations
-- Economy.java
-- BusinessClass.java
-- Galley.java
-- Lavatory.java
-- CockpitDoor.java
-- Character.java
-- Passenger.java
-- Suspect.java
-- CrewMember.java
-- Item.java
-- ClueItem.java
-- UsableItem.java
+- Economy.java - economy class cabin
+- BusinessClass.java - business class cabin
+- Galley.java - galley kitchen - supplies and evidence 
+- Lavatory.java - the lavatories a.k.a. crime scene
+- CockpitDoor.java - the cockpit door
+- Character.java - abstract base class for all characters
+- Passenger.java - regular passengers
+- Suspect.java - suspects, extends passenger and has dislogue stages
+- CrewMember.java - Diane, extends character and gives briefings
+- Item.java - base class for all items
+- ClueItem.java - clue items, extends Item and points to a suspect
+- UsableItem.java - usable items, extends Itsm,can be served
+
+# DESIGN JUSTIFICATION
+The core design was to make Location, Character, and Item as abstract base classes with subclasses for specific types. This was done for structure - locations have the same basic behaviors like having items, or doing actions like look, go, but they each need to print different descriptions when the player goes there. Inheritance was used therefore. Same works with characters - each can talk and react, but Suspect has different lines/ attitudes from CrewMember, so making Character class have subclasses lets each of them have its own implementation while having the same structure. 
+The Plane class is a container for all 5 locations; it was done so the Game class only holds one Plane object and asks it for whatever location needed, which makes it clearer and there is an opportunity to add more locations by simply changing Plane. 
+ALTERNATIVE CONSIDERED
+The obvious alternstive was to skip inheritance and have one Character class with a type field like Sting type = "suspect" or String type = "crew" and the use if-else to handle each type differently. However, it can get messy when there are many characters (and i would like to add more), so having classes clear and structures and separate works for organization and further development. 
+Another alternative was to store all game logic in one file - 
