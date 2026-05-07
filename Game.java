@@ -127,17 +127,17 @@ public class Game {
 
         //DR.OSEI 
         osei = new Passenger("Dr. Osei", "19B", "Sleep researcher. Has been asleep (or pretended to be) since boarding. Strangely, keeps waking up in different seats.", false);
-        player.getEconomy().addCharacter(osei);
+        plane.getEconomy().addCharacter(osei);
 
         //HAROLD
         harold = new Passenger("Harold", "31E", "Retured. Podkabluchnik. Matching travel vest + agrees with EVERYTHING Agnes says. Enthusiastic fellow.", false);
-        player.getEconomy().addCharacter(harold);
+        plane.getEconomy().addCharacter(harold);
 
         
         
         //MADAME VOSS
         voss = new Passenger("Madame Voss", "14A", "Self-described oracle. Sharlatan, of course. Sofar, actually predicted three things correctly. Wants pretzels.", true);
-        player.getEconomy().addCharacter(voss);
+        plane.getEconomy().addCharacter(voss);
 
         //ITEMS-----------------------------------------------
         // Galley supplies 
@@ -156,7 +156,8 @@ public class Game {
         plane.getBusinessClass().addItem(new ClueItem("empty briefcase", "Found in the overhead bin above seat 3A. Locks are broken open. Whatever was inside is gone", "Mr. Byork"));
 
         // GAME LOOP----------------------------------------------
-
+    }
+    
     private void gameLoop() {
         while (!gameOver) {
             if (turnsLeft <= 0) {
@@ -509,7 +510,7 @@ public class Game {
                 break;
             }
         }
-        if (target = null) {
+        if (target == null) {
             System.out.println("Accuse who? Use their name. (e.g. accuse byork)");
             return;
         }
