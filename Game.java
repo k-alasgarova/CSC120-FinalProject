@@ -191,13 +191,13 @@ public class Game {
             handleTalk(input.substring(5).trim());
         //take
         } else if (input.startsWith("take ")) {
-            handleTalk(input.substring(5).trim());
+            handleTake(input.substring(5).trim());
         //examine
         } else if (input.startsWith("examine ")) {
-            handleTalk(input.substring(8).trim());
+            handleExamine(input.substring(8).trim());
         //serve
         } else if (input.startsWith("serve ")) {
-            handleTalk(input.substring(6).trim());
+            handleServe(input.substring(6).trim());
         //search (lavatory only)
         } else if (input.equals("search")) {
             handleSearch();

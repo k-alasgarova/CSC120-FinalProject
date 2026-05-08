@@ -54,8 +54,10 @@ ITEMS + WHERE TO FIND THEM (+ how to get them)
 - folded note - economy - CLUE - take folded note
 - empty briefcase - business - CLUE - take empty briefcase
 
-FASTEST PATH TO WIN
+FASTEST PATH TO WIN (an example)
 talk Diane
+go galley
+take warm water
 go business
 serve byork warm water
 talk byork
